@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GithubUserData</string>
+    <string name="menu_list">List</string>
+</resources>
