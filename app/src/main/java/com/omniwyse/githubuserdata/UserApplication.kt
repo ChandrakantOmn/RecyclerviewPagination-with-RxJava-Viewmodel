@@ -16,7 +16,7 @@ class UserApplication : Application() {
     }
 
     private fun initRetrofit() {
-         val BASE_URL = "https://api.github.com/"
+        val BASE_URL = "https://api.github.com/"
         val logging = HttpLoggingInterceptor()
         logging.level = HttpLoggingInterceptor.Level.BASIC
         val httpClient = OkHttpClient.Builder()

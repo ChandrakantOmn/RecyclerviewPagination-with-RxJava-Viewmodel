@@ -9,14 +9,18 @@ import com.omniwyse.githubuserdata.repository.UserRepository
 
 class UserListViewModel(api: Api) : ViewModel() {
     var user: MutableLiveData<ArrayList<User>>? = null
-     val repo: UserRepository = UserRepository(api)
+    var repo: UserRepository = UserRepository(api)
 
     init {
         user = repo.getUsers(0)
+
     }
 
     fun loadMore(page: Int) {
-        user = repo.getUsers(page)
+        repo.getUsers(page)!!.observeForever {
+            if (it != null)
+                user!!.value = it
+        }
     }
 
 }

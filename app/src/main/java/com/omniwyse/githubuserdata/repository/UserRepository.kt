@@ -13,7 +13,7 @@ import retrofit2.Response
 class UserRepository(private val apiInterface :Api) {
     fun getUsers(page: Int): MutableLiveData<ArrayList<User>>? {
         val userListForReturn = MutableLiveData<ArrayList<User>>()
-        val call = apiInterface.getUser1(page, 10)
+        val call = apiInterface.getUser1(page, 20)
         call.enqueue(object : Callback<List<User>> {
             override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
                 if (response.body() != null) {

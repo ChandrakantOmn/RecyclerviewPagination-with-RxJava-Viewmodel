@@ -1,13 +1,11 @@
 package com.omniwyse.githubuserdata.view.adapter
 
 import android.annotation.TargetApi
-import android.app.ActivityOptions
 import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import android.util.Pair
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +14,6 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import com.omniwyse.githubuserdata.R
 import com.omniwyse.githubuserdata.model.User
-import com.omniwyse.githubuserdata.view.MainActivity
 import com.omniwyse.pagination.helpers.setGlideImage
 import com.omniwyse.pagination.view.ProfileActivity
 import java.util.*
@@ -44,11 +41,12 @@ class UserListAdapter(private val mCtx: Context, var listType: Int) :
         holder.textView.text = item.login
         holder.imageView.setGlideImage(mCtx, item.avatarUrl)
         holder.userLayout.setOnClickListener {
-         //   val pairs1: Pair<View, String> = Pair.create(holder.imageView, "imageTranse")
+            //   val pairs1: Pair<View, String> = Pair.create(holder.imageView, "imageTranse")
 //            val options = ActivityOptions.makeSceneTransitionAnimation(mCtx as MainActivity, pairs1)
             mCtx.startActivity(
-                Intent(mCtx, ProfileActivity::class.java))
-                  //  .putExtra("DATA", item), options.toBundle()
+                Intent(mCtx, ProfileActivity::class.java)
+            )
+            //  .putExtra("DATA", item), options.toBundle()
         }
     }
 
